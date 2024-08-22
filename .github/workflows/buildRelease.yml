@@ -36,8 +36,8 @@ jobs:
 
     - name: Move dist file from repository, switch branches, and copy back
       run: |
-        git status
         cp ./dist/index.html ../index.html
+        git fetch
         git switch updates
         rm ./index.html
         cp ../index.html ./index.html
