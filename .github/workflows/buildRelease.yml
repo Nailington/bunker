@@ -38,6 +38,8 @@ jobs:
       run: |
         cp ./dist/index.html ../index.html
         git checkout -b updates
+        git fetch && git pull
+        rm ./index.html
         cp ../index.html ./index.html
     - name: Commit changes
       run: |
