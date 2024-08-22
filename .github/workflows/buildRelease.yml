@@ -38,7 +38,7 @@ jobs:
       run: |
         cp ./dist/index.html ../index.html
         git checkout -b updates
-        git fetch && git pull
+        git fetch && git pull origin updates
         rm ./index.html
         cp ../index.html ./index.html
     - name: Commit changes
