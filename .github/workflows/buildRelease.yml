@@ -34,13 +34,16 @@ jobs:
         files: |
           dist/index.html
 
-    - name: Create or update the updates branch
+    - name: Move dist file from repository, switch branches, and copy back
       run: |
-        echo "WORK DIR" && echo $PWD/
-        echo "List work  dir" && ls -a ../
-        echo "List Home dir" && ls -a ~ 
-
+        cp ./dist/index.html ../index.html
+        git checkout -b updates
+        cp ../index.html ./index.html
+    - name: Commit changes
+      run: |
+        git add index.html
+        git commit -m ${{ github.ref_name }}
     - name: Push changes
       run: |
-        git push --set-upstream origin updates
+        git push
 
