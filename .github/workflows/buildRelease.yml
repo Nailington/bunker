@@ -36,8 +36,8 @@ jobs:
 
     - name: Create or update the updates branch
       run: |
-        echo "WORK DIR" && echo $PWD/../
-        echo "List work  dir" && ls -a
+        echo "WORK DIR" && echo $PWD/
+        echo "List work  dir" && ls -a ../
         echo "List Home dir" && ls -a ~ 
 
     - name: Push changes
