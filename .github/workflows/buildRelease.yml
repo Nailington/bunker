@@ -47,5 +47,5 @@ jobs:
         git commit -m ${{ github.ref_name }}
     - name: Push changes
       run: |
-        git push
+        git push --set-upstream origin updates
 
