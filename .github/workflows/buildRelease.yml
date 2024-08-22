@@ -36,13 +36,10 @@ jobs:
 
     - name: Create or update the updates branch
       run: |
-        cp dist/index.html .
-        find . ! -name 'index.html' -not -name '.gitignore' -not -path './.git/*' -type f -exec rm -f {} +
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git checkout -B updates
-        git add -A
-        git commit -m "Updated bunker"
+        PWD
+        ls -a
+        ls ~
+        
     - name: Push changes
       run: |
         git push --set-upstream origin updates
